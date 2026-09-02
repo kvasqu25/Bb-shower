@@ -123,3 +123,91 @@
         init();
     });
 })();
+
+/* =========================================
+   CUENTA REGRESIVA
+   ========================================= */
+
+// Fecha y hora del evento
+// 18 de diciembre de 2026 a las 5:00 PM
+
+const targetDate = new Date(
+    "December 18, 2026 17:00:00"
+).getTime();
+
+
+function updateCountdown() {
+
+    // Hora actual
+    const now = new Date().getTime();
+
+    // Diferencia entre el evento y ahora
+    const difference = targetDate - now;
+
+
+    // Si ya llegó el evento
+    if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+
+        document.getElementById("hours").textContent = "00";
+
+        document.getElementById("minutes").textContent = "00";
+
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
+
+
+    // Calcular días
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+
+    // Calcular horas
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+
+    // Calcular minutos
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+
+    // Calcular segundos
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+
+    // Mostrar días
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+
+    // Mostrar horas
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+
+    // Mostrar minutos
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+
+    // Mostrar segundos
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+
+// Ejecutar inmediatamente
+updateCountdown();
+
+
+// Actualizar cada segundo
+setInterval(updateCountdown, 1000);

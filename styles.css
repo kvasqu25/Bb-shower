@@ -50,6 +50,21 @@ table {
     border-spacing: 0;
 }
 
+html,
+body {
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 /* confetti */
 #confetti-canvas {
     position: fixed;
@@ -128,47 +143,182 @@ main {
     margin: 0 auto;
 }
 
+/* =========================================
+   HEADER / HERO
+   ========================================= */
+
 header {
-    min-height: 100vh;
-    background-image: url("photos/babbyintro.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    height: 700px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
 
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 
-    padding-bottom: 80px;
+    text-align: center;
+}
+
+
+/* =========================================
+   VIDEO
+   ========================================= */
+
+.hero-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   CAPA SOBRE EL VIDEO
+   ========================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    padding: 30px;
+
     box-sizing: border-box;
 }
 
-header h1 {
-    animation: fadeIn 2s ease;
-    /* line-height: 1.15;
-    margin: 0; */
+
+/* =========================================
+   TEXTO PEQUEÑO
+   ========================================= */
+
+.hero-small {
+    margin: 0 0 20px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
 }
 
-header p {
-    margin: 20px 0 0;
-    font-size: 1.2rem;
+
+/* =========================================
+   NOMBRE DEL BEBÉ
+   ========================================= */
+
+.hero-content h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 46px;
+
+    font-weight: 500;
+
+    font-style: italic;
+
     letter-spacing: 2px;
-    max-width: 500px;
-    color: #000000;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(20,30,40,.25),
-        rgba(20,30,40,.45)
-    );
-    z-index: -1;
+
+/* =========================================
+   LÍNEA DECORATIVA
+   ========================================= */
+
+.hero-line {
+    width: 60px;
+
+    height: 1px;
+
+    background: white;
+
+    margin: 18px auto;
 }
+
+
+/* =========================================
+   SUBTÍTULO
+   ========================================= */
+
+.hero-subtitle {
+    margin: 0;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   FECHA
+   ========================================= */
+
+.hero-date {
+    margin: 25px 0 0;
+
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+
 
 
 #joinme ,
@@ -177,27 +327,638 @@ header::before {
 #end {
     background-color: white;
 }
-
-#letter {
-    background-color: #FFFFFF;
-    margin: 1rem;
-    padding: 2rem;
+#joinme {
+    background-color: #fff;
+    text-align: center;
+    padding: 50px 30px;
 }
 
-#timeDate div {
+#joinme .intro {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #77716d;
+    font-style: italic;
+}
+
+#joinme h2 {
+    color: #66889a;
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0 0 18px;
+}
+
+#joinme p:last-child {
+    color: #4a4541;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+} 
+
+
+/* =========================================
+   SECCIÓN DE FECHA Y UBICACIÓN
+   ========================================= */
+
+#timeDate {
     width: 100%;
-    height: 200px;
-    background-color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#timeDate h2{
-    padding-top: 50px;
+    max-width: 430px;
+
+    margin: 35px auto;
+
+    padding: 20px 15px;
+
+    box-sizing: border-box;
+
+    text-align: center;
 }
 
-#letter{
-    text-align: left;
+
+/* =========================================
+   TARJETA
+   ========================================= */
+
+.location-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 42px 25px 30px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(85, 121, 139, 0.35);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(85, 121, 139, 0.08);
+}
+
+
+/* =========================================
+   BORDE INTERIOR
+   ========================================= */
+
+.location-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    border: 1px solid rgba(233, 154, 185, 0.40);
+
+    border-radius: 7px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   FECHA
+   ========================================= */
+
+.location-card h2 {
+    position: relative;
+
+    margin: 0 0 18px;
+
+    color: #55798b;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   HORA
+   ========================================= */
+
+.event-time {
+    position: relative;
+
+    margin: 0;
+
+    color: #403b38;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   DIVISOR
+   ========================================= */
+
+.location-divider {
+    width: 45px;
+
+    height: 1px;
+
+    margin: 28px auto;
+
+    background: #e99ab9;
+}
+
+
+/* =========================================
+   TÍTULO UBICACIÓN
+   ========================================= */
+
+.location-card h2:nth-of-type(2) {
+    margin-bottom: 18px;
+
+    font-size: 26px;
+}
+
+
+/* =========================================
+   DIRECCIÓN
+   ========================================= */
+
+.address {
+    position: relative;
+
+    margin: 0;
+
+    color: #403b38;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOTO
+   ========================================= */
+
+.location-card img {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    height: auto;
+
+    margin: 30px auto 0;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    #timeDate {
+        width: 100%;
+/* 
+        margin: 30px auto;
+
+        padding: 15px 12px; */
+    }
+
+
+    .location-card {
+        padding: 38px 22px 28px;
+    }
+
+
+    .location-card h2 {
+        font-size: 21px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .location-card h2:nth-of-type(2) {
+        font-size: 23px;
+    }
+
+
+    .event-time {
+        font-size: 15px;
+    }
+
+
+    .address {
+        font-size: 14px;
+
+        letter-spacing: 1px;
+
+        line-height: 1.7;
+    }
+
+
+    .location-divider {
+        margin: 23px auto;
+    }
+
+
+    .location-card img {
+        margin-top: 25px;
+    }
+
+}
+
+#dresscode .pink {
+    color: #e88bb5;
+    font-weight: bold;
+}
+
+#dresscode .blue {
+    color: #75c9ee;
+    font-weight: bold;
+}
+
+/* =========================================
+   CUENTA REGRESIVA
+   ========================================= */
+
+#countdown {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   VIDEO
+   ========================================= */
+
+.ultrasound-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CAPA SOBRE EL VIDEO
+   ========================================= */
+
+.countdown-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+       Hace que el ultrasonido se vea,
+       pero que el texto tenga contraste.
+    */
+
+    background: rgba(245, 241, 237, 0.62);
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.countdown-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 25px 15px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.countdown-content h2 {
+    margin: 0 0 5px;
+
+    color: #55798b;
+
+    font-size: 24px;
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   INTRO
+   ========================================= */
+
+.countdown-intro {
+    margin: 0 0 20px;
+
+    color: #403b38;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   TIMER
+   ========================================= */
+
+.timer {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.time-box {
+    width: calc((100% - 24px) / 4);
+
+    max-width: 100px;
+
+    height: 105px;
+
+    flex-shrink: 1;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   ROSA
+   ========================================= */
+
+.pink-box {
+    background: #e99ab9;
+}
+
+
+/* =========================================
+   BLANCO
+   ========================================= */
+
+.white-box {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+
+/* =========================================
+   AZUL
+   ========================================= */
+
+.blue-box {
+    background: #8bcde9;
+}
+
+
+/* =========================================
+   NÚMEROS
+   ========================================= */
+
+.time-box span {
+    font-size: 38px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    color: #55798b;
+}
+
+
+/* Números blancos */
+
+.pink-box span,
+.blue-box span {
+    color: white;
+}
+
+
+/* =========================================
+   ETIQUETAS
+   ========================================= */
+
+.time-box small {
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #403b38;
+}
+
+
+/* Etiquetas blancas */
+
+.pink-box small,
+.blue-box small {
+    color: white;
+}
+
+
+/* =========================================
+   PREGUNTA
+   ========================================= */
+
+.countdown-question {
+    margin: 16px 0 0;
+
+    color: #55798b;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    #countdown {
+        width: 100%;
+
+        height: 290px;
+
+        overflow: hidden;
+    }
+
+
+    .countdown-content {
+        padding: 22px 12px;
+    }
+
+
+    .countdown-content h2 {
+        font-size: 20px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .countdown-intro {
+        font-size: 11px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .timer {
+        gap: 5px;
+
+        width: 100%;
+    }
+
+
+    .time-box {
+        width: calc((100% - 15px) / 4);
+
+        height: 85px;
+
+        max-width: none;
+
+        border-radius: 6px;
+    }
+
+
+    .time-box span {
+        font-size: 29px;
+    }
+
+
+    .time-box small {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+
+        margin-top: 6px;
+    }
+
+
+    .countdown-question {
+        font-size: 14px;
+
+        letter-spacing: 2px;
+
+        margin-top: 13px;
+    }
+
+        header {
+        width: 100%;
+        max-width: 430px;
+
+        height: 700px;
+    }
+/* hero */
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-small {
+        font-size: 12px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-date {
+        font-size: 11px;
+    }
 }
 
 @keyframes fadeIn {
